@@ -1,4 +1,4 @@
-# midi-velocity-converter
+# midi-velocity-convertor
 
 # 사용방법 =>
 - 미디파일 경로 예시 : C:\<user_name>\user\Downloads\Meow\Cute.mid
