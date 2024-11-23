@@ -1,7 +1,7 @@
 # midi-velocity-converter
 
-# 사용방법 =>
-- 미디파일 경로 예시 : `C:\<user_name>\user\Downloads\Meow\Cute.mid`
-- Velocity threshold : 50 으로 설정하면 velocity가 50이하인 노트제거
+# How to use =>
+- Example MIDI file path: `C:\<user_name>\user\Downloads\Meow\Cute.mid`
+- Velocity threshold : If set to 50, notes with velocity below 50 will be removed.
 
 # And Enjoy! :3
