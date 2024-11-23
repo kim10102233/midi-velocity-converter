@@ -1,7 +1,7 @@
 from mido import MidiFile, MidiTrack, Message
 import os
 from tqdm import tqdm
-print("--Made By Soft Midi Player.--")
+print("--Made By Soft Midi Player--")
 def remove_low_velocity_notes(input_file, output_file, velocity_threshold=50):
     midi = MidiFile(input_file)
     new_midi = MidiFile()
@@ -9,7 +9,7 @@ def remove_low_velocity_notes(input_file, output_file, velocity_threshold=50):
     total_messages = sum(len(track) for track in midi.tracks)
     processed_messages = 0
 
-    with tqdm(total=total_messages, desc="진행 상태", unit="메시지") as pbar:
+    with tqdm(total=total_messages, desc="Progress", unit="message") as pbar:
         for track in midi.tracks:
             new_track = MidiTrack()
             accumulated_time = 0
@@ -28,22 +28,22 @@ def remove_low_velocity_notes(input_file, output_file, velocity_threshold=50):
             new_midi.tracks.append(new_track)
 
     new_midi.save(output_file)
-    print(f"\n저장 완료: {output_file}")
+    print(f"\nSaving Complete: {output_file}")
 
 def main():
-    input_midi_path = input("MIDI 파일 경로를 입력하세요: ")
+    input_midi_path = input("Enter the path to the MIDI file: ")
     if not os.path.exists(input_midi_path):
-        print("입력한 MIDI 파일 경로가 존재하지 않습니다.")
+        print("The MIDI file path you entered does not exist.")
         return
     try:
-        velocity_threshold = int(input("Velocity threshold를 입력하세요 (기본값: 50): ") or 50)
+        velocity_threshold = int(input("Enter the Velocity threshold (default: 50): ") or 50)
     except ValueError:
-        print("유효한 숫자를 입력해 주세요.")
+        print("Please enter a valid number.")
         return
 
-    output_midi_path = input("변환 후 저장할 파일 경로를 입력하세요: ")  # 저장 경로 입력
+    output_midi_path = input("Enter the file path you want to save after conversion: ")
 
-    print("변환을 시작합니다...")
+    print("Start converting...")
     remove_low_velocity_notes(input_midi_path, output_midi_path, velocity_threshold)
 
 if __name__ == "__main__":
