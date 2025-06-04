@@ -2,6 +2,7 @@ from mido import MidiFile, MidiTrack, Message
 import os
 from tqdm import tqdm
 print("--Made By Soft Midi Player--")
+print("Usage: input <midi path> | output <path with .mid>")
 def remove_low_velocity_notes(input_file, output_file, velocity_threshold=50):
     midi = MidiFile(input_file)
     new_midi = MidiFile()
